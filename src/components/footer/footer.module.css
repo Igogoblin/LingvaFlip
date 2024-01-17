@@ -1,0 +1,6 @@
+footer {
+  width: 1440px;
+  height: 64px;
+  flex-shrink: 0;
+  background: #f0f0f0;
+}
