@@ -6,11 +6,7 @@ function Header() {
     <nav className={s.navigator}>
       <ul>
         <li>
-          <Link
-          //to="one"
-          >
-            page one
-          </Link>
+          <Link to="/one">page one</Link>
         </li>
         <li>
           <Link>page two</Link>

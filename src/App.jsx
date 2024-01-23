@@ -1,17 +1,16 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import "./App.css";
+import PageOne from "./pages/PageOne";
+import TestPage from "./test/TestPage";
 
 function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route
-        //path="one" element={<PageOne />}
-        ></Route>
-        <Route></Route>
-        <Route></Route>
-      </Routes>
-    </BrowserRouter>
+    <Routes>
+      <Route path="/" element={<PageOne />} />
+      <Route path="/one" element={<TestPage />}></Route>
+      <Route></Route>
+      <Route></Route>
+    </Routes>
   );
 }
 
