@@ -66,3 +66,8 @@ textarea,
 select {
   font: inherit;
 }
+
+:root {
+  --Primary-6: #1890ff;
+}
+/* background: var(--Primary-6, #1890ff); */

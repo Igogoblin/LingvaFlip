@@ -8,7 +8,7 @@ import Footer from "./components/footer/Footer";
 
 function App() {
   return (
-    <>
+    <main>
       <header>
         <Header></Header>
       </header>
@@ -23,7 +23,7 @@ function App() {
       <footer>
         <Footer></Footer>
       </footer>
-    </>
+    </main>
   );
 }
 
