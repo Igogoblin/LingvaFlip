@@ -10,19 +10,21 @@ footer {
   /* left: 0; */
   display: flex;
   justify-content: center;
-  align-items: center;
 }
 .wrapper {
   width: 80%;
   height: 100%;
   display: flex;
   justify-content: end;
+  align-items: center;
 }
+
 .button {
   /* display: inline-flex; */
+  height: 34px;
   padding: 4px 15px;
-  justify-content: flex-end;
-  align-items: center;
+  /* justify-content: flex-end; */
+  /* align-items: center; */
   gap: 8px;
   border-radius: 2px;
   /* border: 1px solid var(--Primary-6, #1890ff); */

@@ -71,3 +71,8 @@ select {
   --Primary-6: #1890ff;
 }
 /* background: var(--Primary-6, #1890ff); */
+
+header {
+  display: flex;
+  flex-direction: row;
+}

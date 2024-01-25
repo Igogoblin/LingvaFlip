@@ -5,19 +5,24 @@ import Header from "./components/header/Header";
 import TestPage from "./test/TestPage";
 import NotFound from "./pages/notpage/NotFound";
 import Footer from "./components/footer/Footer";
+import Statistic from "./pages/stat/Statistic";
 
 function App() {
   return (
     <main>
       <header>
+        <img src="./assets/lingvoLogo.png" alt="logo" />
         <Header></Header>
       </header>
       <div>
         <Routes>
-          <Route path="/" element={<PageOne />} />
-          <Route path="/test" element={<TestPage />}></Route>
+          <Route path="lingvaflip/" element={<PageOne />} />
+          <Route path="lingvaflip/lern" element={<TestPage />}></Route>
+          <Route
+            path="lingvaflip/stat"
+            element={<Statistic></Statistic>}
+          ></Route>
           <Route path="*" element={<NotFound></NotFound>}></Route>
-          <Route></Route>
         </Routes>
       </div>
       <footer>

@@ -3,7 +3,10 @@ import s from "./footer.module.css";
 function Footer() {
   return (
     <footer className={s.footer}>
-      <div className="wrapper">
+      <div className={s.wrapper}>
+        {/* <div className="footer">
+
+        </div> */}
         <Button className={s.button}></Button>
       </div>
     </footer>

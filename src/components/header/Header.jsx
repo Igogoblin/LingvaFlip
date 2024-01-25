@@ -6,13 +6,13 @@ function Header() {
     <nav className={s.navigator}>
       <ul>
         <li>
-          <Link to="/">page one</Link>
+          <Link to="lingvaflip/">Карточки</Link>
         </li>
         <li>
-          <Link to="/test">page two</Link>
+          <Link to="lingvaflip/lern">Изучено</Link>
         </li>
         <li>
-          <Link>page three</Link>
+          <Link to="lingvaflip/stat">Статистика</Link>
         </li>
       </ul>
     </nav>
