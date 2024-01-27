@@ -134,5 +134,117 @@
     "subject": "person",
     "subjectTrans": "человек",
     "study": false
+  },
+  {
+    "id": 18,
+    "word": "I",
+    "translate": "я",
+    "subject": "pronoun",
+    "subjectTrans": "местоимение",
+    "study": false
+  },
+  {
+    "id": 19,
+    "word": "you",
+    "translate": "ты, вы",
+    "subject": "pronoun",
+    "subjectTrans": "местоимение",
+    "study": false
+  },
+  {
+    "id": 20,
+    "word": "we",
+    "translate": "мы",
+    "subject": "pronoun",
+    "subjectTrans": "местоимение",
+    "study": false
+  },
+  {
+    "id": 21,
+    "word": "they",
+    "translate": "они",
+    "subject": "pronoun",
+    "subjectTrans": "местоимение",
+    "study": false
+  },
+  {
+    "id": 22,
+    "word": "he",
+    "translate": "он",
+    "subject": "pronoun",
+    "subjectTrans": "местоимение",
+    "study": false
+  },
+  {
+    "id": 23,
+    "word": "she",
+    "translate": "она",
+    "subject": "pronoun",
+    "subjectTrans": "местоимение",
+    "study": false
+  },
+  {
+    "id": 24,
+    "word": "it",
+    "translate": "оно (о неодушевленном в единственном числе)",
+    "subject": "pronoun",
+    "subjectTrans": "местоимение",
+    "study": false
+  },
+  {
+    "id": 25,
+    "word": "my/me",
+    "translate": "мой/мне",
+    "subject": "pronoun",
+    "subjectTrans": "местоимение",
+    "study": false
+  },
+  {
+    "id": 26,
+    "word": "your/you",
+    "translate": "твой, ваш / тебе, вам",
+    "subject": "pronoun",
+    "subjectTrans": "местоимение",
+    "study": false
+  },
+  {
+    "id": 27,
+    "word": "our/us",
+    "translate": "наш/нам",
+    "subject": "pronoun",
+    "subjectTrans": "местоимение",
+    "study": false
+  },
+  {
+    "id": 28,
+    "word": "their/them",
+    "translate": "их/им",
+    "subject": "pronoun",
+    "subjectTrans": "местоимение",
+    "study": false
+  },
+  {
+    "id": 29,
+    "word": "his/him",
+    "translate": "его/ему",
+    "subject": "pronoun",
+    "subjectTrans": "местоимение",
+    "study": false
+  },
+  {
+    "id": 30,
+    "word": "her",
+    "translate": "ее/ей",
+    "subject": "pronoun",
+    "subjectTrans": "местоимение",
+    "study": false
+  },
+  {
+    "id": 31,
+    "word": "its/it",
+    "translate": "его, ее / ему, ей (о неодушевленном)",
+    "subject": "pronoun",
+    "subjectTrans": "местоимение",
+    "study": false
   }
 ]
