@@ -12,13 +12,12 @@ main {
   flex-direction: column;
   justify-content: space-between;
 }
-/* .logo {
-  width: 140px;
-  height: 40px;
-  background-image: url("./assets/lingvoLogo.png");
-  background-color: #f0f0f0;
-} */
 .logo {
+  width: 190px;
+  height: 40px;
+  background-image: url("./assets/logoLingvo.svg");
+}
+/* .logo {
   width: 165px;
   height: 40px;
-}
+} */

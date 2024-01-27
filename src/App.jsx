@@ -11,9 +11,10 @@ function App() {
   return (
     <main>
       <header>
-        <img src="./assets/logoLingvo.svg" alt="logo" className="logo" />
-        {/* <div className="logo"></div> */}
+        <div className="logo"></div>
         <Header></Header>
+
+        {/* <img src="./assets/logoLingvo.svg" alt="logo" className="logo" /> */}
       </header>
       <div>
         <Routes>
