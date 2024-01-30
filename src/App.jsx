@@ -7,6 +7,8 @@ import NotFound from "./pages/notpage/NotFound";
 import Footer from "./components/footer/Footer";
 // import Statistic from "./pages/stat/Statistic";
 import Studied from "./pages/studied/Studied";
+import SettingCards from "./pages/setting/SettingCards";
+import SettingsButton from "./components/settings/SettingsButton";
 
 function App() {
   return (
@@ -14,7 +16,7 @@ function App() {
       <header>
         <div className="logo"></div>
         <Header></Header>
-
+        <SettingsButton></SettingsButton>
         {/* <img src="./assets/logoLingvo.svg" alt="logo" className="logo" /> */}
       </header>
       <div>
@@ -22,6 +24,10 @@ function App() {
           <Route path="lingvaflip/" element={<PageOne />} />
           <Route path="lingvaflip/lern" element={<TestPage />}></Route>
           <Route path="lingvaflip/stat" element={<Studied></Studied>}></Route>
+          <Route
+            path="lingvaflip/settings"
+            element={<SettingCards></SettingCards>}
+          ></Route>
           <Route path="*" element={<NotFound></NotFound>}></Route>
         </Routes>
       </div>
