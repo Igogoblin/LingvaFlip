@@ -14,9 +14,12 @@ function App() {
   return (
     <main>
       <header>
-        <div className="logo"></div>
-        <Header></Header>
-        <SettingsButton></SettingsButton>
+        <div className="wrapper">
+          <div className="logo"></div>
+          <Header></Header>
+          <SettingsButton></SettingsButton>
+        </div>
+
         {/* <img src="./assets/logoLingvo.svg" alt="logo" className="logo" /> */}
       </header>
       <div>
