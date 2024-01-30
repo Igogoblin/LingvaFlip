@@ -1,0 +1,46 @@
+.section_setting {
+  display: flex;
+  justify-content: center;
+}
+.wrapper_setting {
+  width: 80%;
+}
+.check_area {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.checkRandom {
+  appearance: none;
+  background-color: #fff;
+  margin: 0;
+  font: inherit;
+  color: currentColor;
+  width: 1.15em;
+  height: 1.15em;
+  border: 0.15em solid currentColor;
+  border-radius: 0.15em;
+  transform: translateY(-0.075em);
+
+  display: grid;
+  place-content: center;
+  border: 1px solid var(--Primary-6);
+  border-radius: 50%;
+}
+.checkRandom::before {
+  content: "";
+  width: 0.55em;
+  height: 0.5em;
+
+  transform: scale(0);
+  transition: 120ms transform ease-in-out;
+  box-shadow: inset 1em 1em var(--Primary-6);
+}
+.checkRandom:checked::before {
+  transform: scale(1);
+}
+
+.settings_text {
+  margin: 11px 0 16px 0;
+}
