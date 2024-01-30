@@ -1,0 +1,11 @@
+.statistic_area {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.wrapper_statistic {
+  width: 80%;
+  display: flex;
+  justify-content: start;
+}

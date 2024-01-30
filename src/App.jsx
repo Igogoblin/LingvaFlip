@@ -9,6 +9,7 @@ import Footer from "./components/footer/Footer";
 import Studied from "./pages/studied/Studied";
 import SettingCards from "./pages/setting/SettingCards";
 import SettingsButton from "./components/settings/SettingsButton";
+import Statistic from "./pages/stat/Statistic";
 
 function App() {
   return (
@@ -25,8 +26,11 @@ function App() {
       <div>
         <Routes>
           <Route path="lingvaflip/" element={<PageOne />} />
-          <Route path="lingvaflip/lern" element={<TestPage />}></Route>
-          <Route path="lingvaflip/stat" element={<Studied></Studied>}></Route>
+          <Route path="lingvaflip/lern" element={<Studied></Studied>}></Route>
+          <Route
+            path="lingvaflip/stat"
+            element={<Statistic></Statistic>}
+          ></Route>
           <Route
             path="lingvaflip/settings"
             element={<SettingCards></SettingCards>}
