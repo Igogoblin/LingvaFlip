@@ -1,8 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 import "./App.css";
-import PageOne from "./pages/PageOne";
 import Header from "./components/header/Header";
-import TestPage from "./test/TestPage";
 import NotFound from "./pages/notpage/NotFound";
 import Footer from "./components/footer/Footer";
 // import Statistic from "./pages/stat/Statistic";
@@ -10,6 +8,7 @@ import Studied from "./pages/studied/Studied";
 import SettingCards from "./pages/setting/SettingCards";
 import SettingsButton from "./components/settings/SettingsButton";
 import Statistic from "./pages/stat/Statistic";
+import Cards from "./pages/cards/Cards";
 
 function App() {
   return (
@@ -25,7 +24,7 @@ function App() {
       </header>
       <div>
         <Routes>
-          <Route path="lingvaflip/" element={<PageOne />} />
+          <Route path="lingvaflip/" element={<Cards />} />
           <Route path="lingvaflip/lern" element={<Studied></Studied>}></Route>
           <Route
             path="lingvaflip/stat"
