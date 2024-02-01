@@ -11,7 +11,7 @@
   height: 100%;
   text-align: center;
   backface-visibility: hidden;
-  transition: transform 0.3s cubic-bezier(0.2, 0.85, 0.4, 1.275);
+  transition: transform 0.5s cubic-bezier(0.2, 0.85, 0.4, 1.275);
 }
 .back {
   z-index: 0;
@@ -23,7 +23,7 @@
   backface-visibility: hidden;
   background-color: orange;
   transform: rotateY(-180deg);
-  transition: transform 0.3s cubic-bezier(0.2, 0.85, 0.4, 1.275);
+  transition: transform 0.5s cubic-bezier(0.2, 0.85, 0.4, 1.275);
 }
 .card:hover .back {
   transform: rotateY(0deg);
@@ -32,4 +32,37 @@
 .card:hover .front {
   transform: rotateY(180deg);
   z-index: -1;
+}
+
+.card_area {
+  border: 1px dotted gainsboro;
+}
+.card_panel {
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-between;
+}
+.card_buttons {
+  display: flex;
+  justify-content: space-between;
+}
+.button_skip {
+  width: 130px;
+  height: 40px;
+  border: 0px;
+  border-radius: 2px;
+}
+.button_know {
+  width: 105px;
+  height: 40px;
+  background: var(--Volcano-5);
+  border: 0px;
+  border-radius: 2px;
+}
+.button_dont {
+  width: 83px;
+  height: 40px;
+  background: var(--Primary-6);
+  border: 0px;
+  border-radius: 2px;
 }
