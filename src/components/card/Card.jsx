@@ -8,16 +8,12 @@ import {
 } from "react-redux";
 
 function Card() {
+// {id,subject,word,translate}
   const card = useSelector((state) => state.cards.words);
   let [count, setCount] = useState(0);
   let [ourCard, setOurCard] = useState(card[0]);
   // const dispatch = useDispatch();
   console.log(card);
-  // const [isFlipped, setFlipped] = useState(false);
-
-  // const handleCardClick = () => {
-  //   setFlipped(!isFlipped);
-  // };
 
   function showCard() {
     let lengthArr = card.length;
@@ -27,14 +23,11 @@ function Card() {
       console.log("count", count);
       setCount(count++);
     }
-
-    // dispatch(nextCard());
     console.log("ourCard", ourCard);
   }
 
   return (
     <section>
-      ъъъ\э\э\э22
       <div className={s.card_area}>
         <div className={s.card_box}>
           <h4>{ourCard.subject}</h4>
