@@ -9,9 +9,10 @@ function Cards() {
   // const [count, setCount] = useState(0);
   return (
     <section className={s.cards_area}>
-      {/* {cards.map((card)=>(
+      {/* {cards.map((card) => (
         <Card key={card.id} {...card}></Card>
       ))} */}
+      {/* {bed idea, because we see all cards} */}
       <Card></Card>
       {/* this is cards area */}
     </section>

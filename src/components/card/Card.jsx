@@ -8,7 +8,7 @@ import {
 } from "react-redux";
 
 function Card() {
-// {id,subject,word,translate}
+  // {id,subject,word,translate}
   const card = useSelector((state) => state.cards.words);
   let [count, setCount] = useState(0);
   let [ourCard, setOurCard] = useState(card[0]);
@@ -17,7 +17,7 @@ function Card() {
 
   function showCard() {
     let lengthArr = card.length;
-
+    console.log("смотрим когда обновляется функция показать карточку");
     if (count < lengthArr) {
       setOurCard(card[count]);
       console.log("count", count);
@@ -25,7 +25,7 @@ function Card() {
     }
     console.log("ourCard", ourCard);
   }
-
+  // double click is bracken
   return (
     <section>
       <div className={s.card_area}>
