@@ -7,7 +7,8 @@ import { notStudy } from "../../store/cardSlice";
 
 function Card() {
   //{id,subject,word,translate}
-  const card = useSelector((state) => state.cards.words);
+  // const card = useSelector((state) => state.cards.words);
+  const card = useSelector((state) => state.cards.activeWords);
   let [count, setCount] = useState(0);
   let [ourCard, setOurCard] = useState(card[0]);
   const dispatch = useDispatch();
@@ -22,6 +23,9 @@ function Card() {
       setCount(count++);
     }
     console.log("ourCard", ourCard);
+  }
+  function notStudied() {
+    dispatch(notStudy(ourCard.id));
   }
   // double click is bracken
   return (
@@ -38,12 +42,13 @@ function Card() {
             <div className={s.card_buttons}>
               <button
                 className={s.button_know}
-                onClick={dispatch(
-                  notStudy(
-                    ourCard.id
-                    /*id*/
-                  )
-                )}
+                // onClick={dispatch(
+                //   notStudy(
+                //     {ourCard.id}
+                //     /*id*/
+                //   )
+                // )}
+                onClick={notStudied}
               >
                 Не знаю
               </button>

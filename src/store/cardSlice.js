@@ -21,11 +21,8 @@ const cardSlice = createSlice({
       console.log("state.card ", state.card);
     },
     notStudy(state, action) {
-      const studied = state.activeWords.find((word) => {
-        console.log(word);
-        word.id === action.payload.id;
-      });
-      studied.study = false;
+      const stud = state.activeWords.find((word) => word.id === action.payload);
+      stud.study = false;
     },
   },
 });
