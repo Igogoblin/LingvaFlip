@@ -2,17 +2,15 @@ import { useState } from "react";
 // import { nextCard } from "../../store/cardSlice";
 import s from "./card.module.css";
 // import { useState } from "react";
-import {
-  useSelector,
-  //  useDispatch
-} from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { notStudy } from "../../store/cardSlice";
 
 function Card() {
-  // {id,subject,word,translate}
+  //{id,subject,word,translate}
   const card = useSelector((state) => state.cards.words);
   let [count, setCount] = useState(0);
   let [ourCard, setOurCard] = useState(card[0]);
-  // const dispatch = useDispatch();
+  const dispatch = useDispatch();
   console.log(card);
 
   function showCard() {
@@ -38,7 +36,17 @@ function Card() {
           <div className={s.card_panel}>
             <button className={s.button_skip}>Пропустить</button>
             <div className={s.card_buttons}>
-              <button className={s.button_know}>Не знаю</button>
+              <button
+                className={s.button_know}
+                onClick={dispatch(
+                  notStudy(
+                    ourCard.id
+                    /*id*/
+                  )
+                )}
+              >
+                Не знаю
+              </button>
               <button onClick={showCard} className={s.button_dont}>
                 Знаю
               </button>

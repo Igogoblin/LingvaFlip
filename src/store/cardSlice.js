@@ -18,9 +18,17 @@ const cardSlice = createSlice({
     },
     nextCard(state) {
       state.card = state.words[state.now];
+      console.log("state.card ", state.card);
+    },
+    notStudy(state, action) {
+      const studied = state.activeWords.find((word) => {
+        console.log(word);
+        word.id === action.payload.id;
+      });
+      studied.study = false;
     },
   },
 });
 
-export const { showJ, nextCard } = cardSlice.actions;
+export const { showJ, nextCard, notStudy } = cardSlice.actions;
 export default cardSlice.reducer;
