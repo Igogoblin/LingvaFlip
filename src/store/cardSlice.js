@@ -24,8 +24,12 @@ const cardSlice = createSlice({
       const stud = state.activeWords.find((word) => word.id === action.payload);
       stud.study = false;
     },
+    study(state, action) {
+      const stud = state.activeWords.find((word) => word.id === action.payload);
+      stud.study = true;
+    },
   },
 });
 
-export const { showJ, nextCard, notStudy } = cardSlice.actions;
+export const { showJ, nextCard, notStudy, study } = cardSlice.actions;
 export default cardSlice.reducer;

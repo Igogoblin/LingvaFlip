@@ -3,7 +3,7 @@ import { useState } from "react";
 import s from "./card.module.css";
 // import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { notStudy } from "../../store/cardSlice";
+import { nextCard, notStudy, study } from "../../store/cardSlice";
 
 function Card() {
   //{id,subject,word,translate}
@@ -16,17 +16,23 @@ function Card() {
 
   function showCard() {
     let lengthArr = card.length;
+    dispatch(study(ourCard.id));
     console.log("смотрим когда обновляется функция показать карточку");
     if (count < lengthArr) {
       setOurCard(card[count]);
       console.log("count", count);
       setCount(count++);
     }
+    dispatch(nextCard());
     console.log("ourCard", ourCard);
   }
   function notStudied() {
     dispatch(notStudy(ourCard.id));
+    dispatch(nextCard());
   }
+  // function studied(){
+  // dispatch(studied(ourCard.id))
+  // }
   // double click is bracken
   return (
     <section>
