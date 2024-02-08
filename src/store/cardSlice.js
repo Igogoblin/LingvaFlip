@@ -22,12 +22,17 @@ const cardSlice = createSlice({
     },
     notStudy(state, action) {
       const stud = state.activeWords.find((word) => word.id === action.payload);
+      const studAll = state.words.find((word) => word.id === action.payload);
       stud.study = false;
+      studAll.study = false;
     },
     study(state, action) {
       const stud = state.activeWords.find((word) => word.id === action.payload);
+      const studAll = state.words.find((word) => word.id === action.payload);
       stud.study = true;
+      studAll.study = false;
     },
+    // Settings -------------------------------------------------------------
   },
 });
 
