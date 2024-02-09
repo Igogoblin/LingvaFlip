@@ -5,7 +5,9 @@ const Studied = () => {
   return (
     <div>
       <h3>this is Studied page</h3>
-      <ul></ul>
+      <ul>
+        <li>map</li>
+      </ul>
     </div>
   );
 };
