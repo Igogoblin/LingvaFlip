@@ -30,7 +30,7 @@ const cardSlice = createSlice({
       const stud = state.activeWords.find((word) => word.id === action.payload);
       const studAll = state.words.find((word) => word.id === action.payload);
       stud.study = true;
-      studAll.study = false;
+      studAll.study = true;
     },
     // Settings -------------------------------------------------------------
   },
