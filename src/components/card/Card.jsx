@@ -1,13 +1,9 @@
 import { useState } from "react";
-// import { nextCard } from "../../store/cardSlice";
 import s from "./card.module.css";
-// import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { nextCard, notStudy, study } from "../../store/cardSlice";
 
 function Card() {
-  //{id,subject,word,translate}
-  // const card = useSelector((state) => state.cards.words);
   const card = useSelector((state) => state.cards.activeWords);
   const c = useSelector((state) => state.cards.card);
 
@@ -41,10 +37,8 @@ function Card() {
     dispatch(nextCard());
     console.log(c);
   }
-  // function studied(){
-  // dispatch(studied(ourCard.id))
-  // }
-  // double click is bracken
+
+  // maybe join two function in one !!!!!!!!!!!!!!!!!!!!!!!!!!
   return (
     <section>
       <div className={s.card_area}>
