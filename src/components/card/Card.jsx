@@ -9,6 +9,8 @@ function Card() {
   //{id,subject,word,translate}
   // const card = useSelector((state) => state.cards.words);
   const card = useSelector((state) => state.cards.activeWords);
+  const c = useSelector((state) => state);
+
   let [count, setCount] = useState(0);
   let [ourCard, setOurCard] = useState(card[0]);
   const dispatch = useDispatch();
@@ -29,6 +31,7 @@ function Card() {
   function notStudied() {
     dispatch(notStudy(ourCard.id));
     dispatch(nextCard());
+    console.log(c);
   }
   // function studied(){
   // dispatch(studied(ourCard.id))

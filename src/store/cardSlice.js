@@ -17,8 +17,11 @@ const cardSlice = createSlice({
       console.log(allWords);
     },
     nextCard(state) {
-      state.card = state.words[state.now];
-      console.log("state.card ", state.card);
+      // const card = state.activeWords.find((word, index) => index === state.now);
+      const t = state.activeWords.find((word, index) => index === state.now);
+      // console.log(t);
+      state.card = t;
+      state.now = state.now + 1;
     },
     notStudy(state, action) {
       const stud = state.activeWords.find((word) => word.id === action.payload);
