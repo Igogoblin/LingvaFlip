@@ -35,6 +35,9 @@ const cardSlice = createSlice({
       stud.study = true;
       studAll.study = true;
     },
+    // showStudy(state){
+
+    // }
     // Settings -------------------------------------------------------------
   },
 });

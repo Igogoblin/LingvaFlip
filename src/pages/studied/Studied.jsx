@@ -6,7 +6,12 @@ const Studied = () => {
     <div>
       <h3>this is Studied page</h3>
       <ul>
-        <li>map</li>
+        {/* {studied.map((word) => {
+          if (word.study) {
+            <li>{word}</li>;
+          }
+        })} */}
+        {/* <li>map</li> */}
       </ul>
     </div>
   );
