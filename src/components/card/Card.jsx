@@ -9,7 +9,7 @@ function Card() {
   //{id,subject,word,translate}
   // const card = useSelector((state) => state.cards.words);
   const card = useSelector((state) => state.cards.activeWords);
-  const c = useSelector((state) => state);
+  const c = useSelector((state) => state.cards.card);
 
   let [count, setCount] = useState(0);
   let [ourCard, setOurCard] = useState(card[0]);
@@ -21,7 +21,8 @@ function Card() {
     dispatch(study(ourCard.id));
     console.log("смотрим когда обновляется функция показать карточку");
     if (count < lengthArr) {
-      setOurCard(card[count]);
+      c ? setOurCard(c) : card[count];
+      // setOurCard(card[count]);
       console.log("count", count);
       setCount(count++);
     }
@@ -29,6 +30,13 @@ function Card() {
     console.log("ourCard", ourCard);
   }
   function notStudied() {
+    let lengthArr = card.length;
+    if (count < lengthArr) {
+      c ? setOurCard(c) : card[count];
+      // setOurCard(card[count]);
+      console.log("count", count);
+      setCount(count++);
+    }
     dispatch(notStudy(ourCard.id));
     dispatch(nextCard());
     console.log(c);
