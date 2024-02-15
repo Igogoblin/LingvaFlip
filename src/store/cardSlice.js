@@ -6,7 +6,7 @@ const cardSlice = createSlice({
   initialState: {
     words: allWords,
     activeWords: allWords,
-    now: 0,
+    now: 1,
     card: undefined,
     random: false,
   },
@@ -21,7 +21,6 @@ const cardSlice = createSlice({
       const t = state.activeWords.find((word, index) => index === state.now);
       // console.log(t);
       state.card = t;
-      state.now = state.now + 1;
     },
     notStudy(state, action) {
       const stud = state.activeWords.find((word) => word.id === action.payload);
@@ -35,6 +34,12 @@ const cardSlice = createSlice({
       stud.study = true;
       studAll.study = true;
     },
+    takeCard(state) {
+      state.card = state.activeWords[state.now];
+    },
+    changeNow(state) {
+      state.now = state.now + 1;
+    },
     // showStudy(state){
 
     // }
@@ -42,5 +47,6 @@ const cardSlice = createSlice({
   },
 });
 
-export const { showJ, nextCard, notStudy, study } = cardSlice.actions;
+export const { showJ, nextCard, notStudy, study, takeCard, changeNow } =
+  cardSlice.actions;
 export default cardSlice.reducer;
