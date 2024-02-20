@@ -1,59 +1,46 @@
-import { useState } from "react";
+// import { useState } from "react";
 import { useSelector } from "react-redux";
+// import ThemaStudied from "./ThemaStudied";
+
 const Studied = () => {
   const studied = useSelector((state) => state.cards.words);
-  const [thema /*setThema*/] = useState(studied[0].subject);
 
   console.log(studied);
-  console.log(thema);
-  // const wordsThema = () => {
-  //   studied.map((el) => {
-  //     if (el.subject === thema && el.study === false) {
-  //       console.log("zashel !!!");
-  //       return el;
-  //     }
-  //   });
-  // };
-  // console.log(wordsThema());
+
+  let count = [];
+
+  studied.forEach((element) => {
+    if (element.subject != count[count.length - 1]) count.push(element.subject);
+  });
+  console.log(count);
+
   return (
     <div>
       <h3>this is Studied page</h3>
-      <ul>
-        {/* {studied.map((word) => {
-          if (word.study) {
-            <li>{word}</li>;
-          }
-        })} */}
-        {/* <li>map</li> */}
-      </ul>
-      {/* {studied.map((words)=>{
-        <ul>
-          
-        </ul>
-      })} */}
-      {/* {studied.forEach((element) => {
-        console.log(element);
-        if (element.subject == thema) {
-          <ul></ul>
+      {/* {studied.array.forEach((element) => {
+        if (element.study === false) {
+          <p>element.word</p>;
         }
       })} */}
-      {/* {studied.map((element) => {
-        if (element.subject === thema) {
-          ("");
-        } else {
-          <ul>
-            {thema}
-            {studied.map((el) => {
-              if (el.subject === thema && el.studied === false) {
-                <li>{el.word}</li>;
-              }
-            })}
-          </ul>;
-          {
-            setThema(element.subject);
-          }
-        }
+      {/* {studied.map((el) => {
+        <p key={el.id}>{el.study === false ? "asfd" : ""}</p>;
+        console.log(el.stydy === false);
+        // if (el.study === false) {
+        //   {
+        //     console.log("zashell!!!!!!!!");
+        //   }
+        //   <p>asdf</p>;
+        //   // <p>{el.word}</p>
+        // }
       })} */}
+      <>
+        c
+        {count.map((el) => {
+          <p>{el}</p>;
+        })}
+      </>
+
+      <p>dsa</p>
     </div>
   );
 };

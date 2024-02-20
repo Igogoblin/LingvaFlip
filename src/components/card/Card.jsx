@@ -13,6 +13,8 @@ function Card() {
   const card = useSelector((state) => state.cards.activeWords);
   const c = useSelector((state) => state.cards.card);
 
+  const test = useSelector((state) => state);
+
   let [count, setCount] = useState(1);
   let [ourCard, setOurCard] = useState(card[0]);
   const dispatch = useDispatch();
@@ -35,7 +37,7 @@ function Card() {
       dispatch(nextCard());
       dispatch(changeNow());
     }
-
+    console.log(test);
     console.log("ourCard", ourCard);
   }
   function notStudied() {
