@@ -1,6 +1,6 @@
 // import { useState } from "react";
 import { useSelector } from "react-redux";
-// import ThemaStudied from "./ThemaStudied";
+import ThemaStudied from "./ThemaStudied";
 
 const Studied = () => {
   const studied = useSelector((state) => state.cards.words);
@@ -34,10 +34,10 @@ const Studied = () => {
         // }
       })} */}
       <>
-        c
-        {count.map((el) => {
-          <p>{el}</p>;
-        })}
+        {count.map((el, index) => (
+          // <p>{el}</p>;
+          <ThemaStudied thema={el} key={index} />
+        ))}
       </>
 
       <p>dsa</p>
