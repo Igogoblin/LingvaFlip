@@ -28,9 +28,7 @@ a {
   display: flex;
   align-items: center;
 }
-.link_active.active {
-  border: 2px solid var(--Primary-6);
-}
-/* a::selection {
+.link_active {
   border-bottom: 2px solid var(--Primary-6);
-} */
+  color: var(--Primary-6);
+}

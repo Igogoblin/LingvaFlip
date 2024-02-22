@@ -25,12 +25,20 @@ function Header() {
           </Link>
         </li>
         <li>
-          <Link to="/lingvaflip/lern" className={s.link_active}>
+          <Link
+            to="/lingvaflip/lern"
+            className={currentPath === "/lingvaflip/lern" ? s.link_active : ""}
+            onClick={() => handleNavLinkClick("/lingvaflip/lern")}
+          >
             Изучено
           </Link>
         </li>
         <li>
-          <Link to="/lingvaflip/stat" className={s.link_active}>
+          <Link
+            to="/lingvaflip/stat"
+            className={currentPath === "/lingvaflip/stat" ? s.link_active : ""}
+            onClick={() => handleNavLinkClick("/lingvaflip/stat")}
+          >
             Статистика
           </Link>
         </li>
