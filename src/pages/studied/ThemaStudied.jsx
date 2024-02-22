@@ -35,10 +35,12 @@ const ThemaStudied = (prop) => {
   return (
     <div className={s.notUl}>
       <div className={s.thema_reset}>
-        <button onClick={toggleDropdown} className={s.for_button_thema}>
-          {prop.thema}
-          {countWords(prop.thema)}({allWords} из {wordsCount})
-        </button>
+        <span>
+          <button onClick={toggleDropdown} className={s.for_button_thema}>
+            {prop.thema}
+          </button>
+          {countWords(prop.thema)}({wordsCount} из {allWords})
+        </span>
         <span>сбросить</span>
       </div>
 

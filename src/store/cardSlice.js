@@ -10,7 +10,7 @@ const cardSlice = createSlice({
     now: 1,
     card: undefined,
     random: false,
-    studied: new Map(),
+    // studied: new Map(),
     // studied: [],
   },
   reducers: {
@@ -30,7 +30,7 @@ const cardSlice = createSlice({
       const studAll = state.words.find((word) => word.id === action.payload);
       stud.study = false;
       studAll.study = false;
-      state.studied.delete(stud.subject, stud);
+      // state.studied.delete(stud.subject, stud);
     },
     study(state, action) {
       const stud = state.activeWords.find((word) => word.id === action.payload);
@@ -38,13 +38,25 @@ const cardSlice = createSlice({
       stud.study = true;
       studAll.study = true;
       console.log(stud);
-      state.studied.set(stud.subject, stud);
+      // state.studied.set(stud.subject, stud);
     },
     takeCard(state) {
       state.card = state.activeWords[state.now];
     },
     changeNow(state) {
       state.now = state.now + 1;
+    },
+    resetAllCards(state) {
+      state.words.forEach((element) => {
+        if (element.study === true) {
+          element.study = false;
+        }
+      });
+      state.activeWords.forEach((element) => {
+        if (element.study === true) {
+          element.study = false;
+        }
+      });
     },
     // studiedCards(state,action){}
 
@@ -55,6 +67,13 @@ const cardSlice = createSlice({
   },
 });
 
-export const { showJ, nextCard, notStudy, study, takeCard, changeNow } =
-  cardSlice.actions;
+export const {
+  showJ,
+  nextCard,
+  notStudy,
+  study,
+  takeCard,
+  changeNow,
+  resetAllCards,
+} = cardSlice.actions;
 export default cardSlice.reducer;

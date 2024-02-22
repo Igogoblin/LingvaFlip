@@ -1,11 +1,13 @@
 // import { useState } from "react";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import ThemaStudied from "./ThemaStudied";
 import s from "./studied.module.css";
+import { resetAllCards } from "../../store/cardSlice";
 // import { useState } from "react";
 
 const Studied = () => {
   const studied = useSelector((state) => state.cards.words);
+  const dispatch = useDispatch();
 
   console.log(studied);
 
@@ -20,7 +22,9 @@ const Studied = () => {
     <div>
       <div className={s.all_themas}>
         <h3>Список изученных слов</h3>
-        <button>Сбросить все карточки</button>
+        <button onClick={() => dispatch(resetAllCards())}>
+          Сбросить все карточки
+        </button>
       </div>
 
       <>

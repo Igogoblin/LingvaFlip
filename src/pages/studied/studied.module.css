@@ -27,8 +27,12 @@
   display: flex;
   justify-content: space-between;
 }
-
 .thema_reset span {
+  display: flex;
+  align-items: center;
+}
+
+.thema_reset span:last-child {
   color: var(--Primary-6);
   font-family: Roboto;
   font-size: 14px;
