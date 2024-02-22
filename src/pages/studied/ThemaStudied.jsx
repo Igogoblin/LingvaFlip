@@ -25,7 +25,7 @@ const ThemaStudied = (prop) => {
       if (element.subject === wordsThema) {
         allWords++;
         // here  false ============!!!!!!!!!!!!!!!!!!!!
-        if (element.study === false) {
+        if (element.study === true) {
           wordsCount++;
         }
       }
@@ -48,7 +48,7 @@ const ThemaStudied = (prop) => {
         <ul className={s.notUl}>
           {words.map((word) =>
             // here  false ============!!!!!!!!!!!!!!!!!!!!
-            word.subject === prop.thema && word.study === false ? (
+            word.subject === prop.thema && word.study === true ? (
               <li
                 key={word.id}
                 onClick={() => handleOptionClick(prop.option)}
