@@ -1,6 +1,8 @@
 // import { useState } from "react";
 import { useSelector } from "react-redux";
 import ThemaStudied from "./ThemaStudied";
+import s from "./studied.module.css";
+// import { useState } from "react";
 
 const Studied = () => {
   const studied = useSelector((state) => state.cards.words);
@@ -16,31 +18,16 @@ const Studied = () => {
 
   return (
     <div>
-      <h3>this is Studied page</h3>
-      {/* {studied.array.forEach((element) => {
-        if (element.study === false) {
-          <p>element.word</p>;
-        }
-      })} */}
-      {/* {studied.map((el) => {
-        <p key={el.id}>{el.study === false ? "asfd" : ""}</p>;
-        console.log(el.stydy === false);
-        // if (el.study === false) {
-        //   {
-        //     console.log("zashell!!!!!!!!");
-        //   }
-        //   <p>asdf</p>;
-        //   // <p>{el.word}</p>
-        // }
-      })} */}
+      <div className={s.all_themas}>
+        <h3>Список изученных слов</h3>
+        <button>Сбросить все карточки</button>
+      </div>
+
       <>
         {count.map((el, index) => (
-          // <p>{el}</p>;
-          <ThemaStudied thema={el} key={index} />
+          <ThemaStudied thema={el} key={index} option={count} />
         ))}
       </>
-
-      <p>dsa</p>
     </div>
   );
 };

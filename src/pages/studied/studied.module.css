@@ -1,0 +1,72 @@
+.all_themas {
+  display: flex;
+  justify-content: space-between;
+}
+.all_themas button {
+  width: 164px;
+  height: 32px;
+  padding: 4px, 15px, 4px, 15px;
+  border-radius: 2px;
+  border: 1px;
+  gap: 8px;
+  background: var(--Primary-6);
+  font-family: Roboto;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 22px;
+  letter-spacing: 0em;
+  text-align: center;
+  color: #ffffff;
+  cursor: pointer;
+}
+.notUl {
+  flex-direction: column;
+}
+
+.thema_reset {
+  display: flex;
+  justify-content: space-between;
+}
+
+.thema_reset span {
+  color: var(--Primary-6);
+  font-family: Roboto;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 22px;
+  letter-spacing: 0em;
+  text-align: center;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.for_button_thema {
+  border: 0;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  padding: 8px 12px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.for_button_thema::before {
+  content: " ";
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 6px 6px 0 6px; /* Стрелка вниз */
+  border-color: #000 transparent transparent transparent;
+  margin-right: 8px; /* Расстояние между стрелкой и текстом */
+}
+
+.word_place {
+  width: 100%;
+  display: flex;
+  /* justify-content: space-between; */
+}
+.word_place span {
+  width: 50%;
+}
