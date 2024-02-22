@@ -4,6 +4,8 @@ import s from "./studied.module.css";
 
 const ThemaStudied = (prop) => {
   let words = useSelector((state) => state.cards.words);
+  let allWords = 0;
+  let wordsCount = 0;
   console.log(words);
 
   const [isOpen, setIsOpen] = useState(false);
@@ -18,11 +20,24 @@ const ThemaStudied = (prop) => {
     setIsOpen(false);
   };
 
+  const countWords = (wordsThema) => {
+    words.forEach((element) => {
+      if (element.subject === wordsThema) {
+        allWords++;
+        // here  false ============!!!!!!!!!!!!!!!!!!!!
+        if (element.study === false) {
+          wordsCount++;
+        }
+      }
+    });
+  };
+
   return (
     <div className={s.notUl}>
       <div className={s.thema_reset}>
         <button onClick={toggleDropdown} className={s.for_button_thema}>
           {prop.thema}
+          {countWords(prop.thema)}({allWords} из {wordsCount})
         </button>
         <span>сбросить</span>
       </div>
@@ -30,6 +45,7 @@ const ThemaStudied = (prop) => {
       {isOpen && (
         <ul className={s.notUl}>
           {words.map((word) =>
+            // here  false ============!!!!!!!!!!!!!!!!!!!!
             word.subject === prop.thema && word.study === false ? (
               <li
                 key={word.id}
