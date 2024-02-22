@@ -1,46 +1,36 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useState } from "react";
 import s from "./header.module.css";
-// import { useSelector } from "react-redux";
-// import { useState } from "react";
 
 function Header() {
-  // const all = useSelector((state) => state.cards.words);
-  // const statistic = [[]];
+  const navigate = useNavigate();
+  const [currentPath, setCurrentPath] = useState("");
 
-  // console.log(all);
+  const handleNavLinkClick = (path) => {
+    setCurrentPath(path);
+    navigate(path);
+  };
 
-  // function orderStat() {
-  //   let count = all[0].subject;
-
-  //   console.log("count", count);
-
-  //   for (let i = 0; i < all.length; i++) {
-  //     if (
-  //       statistic[i][0] !=
-  //       // .statistic.length - 1
-  //       count
-  //     ) {
-  //       statistic.push([all[i].subject]);
-  //     }
-  //     // if(all[i]<)
-  //   }
-  // }
-  // orderStat();
-  // console.log(statistic);
   return (
     <nav className={s.navigator}>
       <ul>
         <li>
-          <Link to="lingvaflip/">Карточки</Link>
-        </li>
-        <li>
-          <Link to="lingvaflip/lern">Изучено</Link>
-        </li>
-        <li>
           <Link
-            to="lingvaflip/stat"
-            // onClick={orderStat}
+            exact
+            to="/lingvaflip/"
+            className={currentPath === "/" ? s.link_active : ""}
+            onClick={() => handleNavLinkClick("/")}
           >
+            Карточки
+          </Link>
+        </li>
+        <li>
+          <Link to="/lingvaflip/lern" className={s.link_active}>
+            Изучено
+          </Link>
+        </li>
+        <li>
+          <Link to="/lingvaflip/stat" className={s.link_active}>
             Статистика
           </Link>
         </li>

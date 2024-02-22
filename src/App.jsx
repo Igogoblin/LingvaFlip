@@ -24,14 +24,14 @@ function App() {
       </header>
       <div>
         <Routes>
-          <Route path="lingvaflip/" element={<Cards />} />
-          <Route path="lingvaflip/lern" element={<Studied></Studied>}></Route>
+          <Route path="/lingvaflip/" element={<Cards />} />
+          <Route path="/lingvaflip/lern" element={<Studied></Studied>}></Route>
           <Route
-            path="lingvaflip/stat"
+            path="/lingvaflip/stat"
             element={<Statistic></Statistic>}
           ></Route>
           <Route
-            path="lingvaflip/settings"
+            path="/lingvaflip/settings"
             element={<SettingCards></SettingCards>}
           ></Route>
           <Route path="*" element={<NotFound></NotFound>}></Route>

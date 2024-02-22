@@ -3,19 +3,34 @@
 }
 nav {
   max-width: 285px;
+  height: 100%;
   display: flex;
-  justify-content: center;
+  /* justify-content: bottom; */
+  align-items: end;
 }
 ul {
   width: 285px;
+  height: 60%;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 0;
+  margin: 0;
 }
 li {
+  height: 100%;
   list-style-type: none;
   gap: 15;
 }
 a {
+  height: 100%;
   text-decoration: none;
+  display: flex;
+  align-items: center;
 }
+.link_active.active {
+  border: 2px solid var(--Primary-6);
+}
+/* a::selection {
+  border-bottom: 2px solid var(--Primary-6);
+} */
