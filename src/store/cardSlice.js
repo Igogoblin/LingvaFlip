@@ -58,6 +58,14 @@ const cardSlice = createSlice({
         }
       });
     },
+    resetThema(state, action) {
+      console.log(action.payload);
+      state.words.forEach((word) => {
+        if (word.subject === action.payload) {
+          word.study = false;
+        }
+      });
+    },
     // studiedCards(state,action){}
 
     // showStudy(state){
@@ -75,5 +83,6 @@ export const {
   takeCard,
   changeNow,
   resetAllCards,
+  resetThema,
 } = cardSlice.actions;
 export default cardSlice.reducer;
