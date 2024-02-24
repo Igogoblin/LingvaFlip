@@ -13,6 +13,7 @@ function SettingCards() {
           <input type="checkbox" className={s.checkRandom}></input>{" "}
           <span>Все темы рандомно</span>
         </form>
+        <div>Доступные темы</div>
       </div>
     </section>
   );
