@@ -66,6 +66,7 @@ const cardSlice = createSlice({
         }
       });
     },
+
     // studiedCards(state,action){}
 
     // showStudy(state){
