@@ -1,3 +1,10 @@
+.studied {
+  display: flex;
+  justify-content: center;
+}
+.wrapper_studied {
+  width: 80%;
+}
 .all_themas {
   display: flex;
   justify-content: space-between;
@@ -69,6 +76,7 @@
 .word_place {
   width: 100%;
   display: flex;
+  background: #ffffff;
   /* justify-content: space-between; */
 }
 .word_place span {
