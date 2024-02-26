@@ -57,6 +57,7 @@ const cardSlice = createSlice({
           element.study = false;
         }
       });
+      state.now = 1;
     },
     resetThema(state, action) {
       console.log(action.payload);
