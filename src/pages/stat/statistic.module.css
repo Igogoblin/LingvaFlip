@@ -10,15 +10,35 @@
   flex-direction: column;
   justify-content: start;
 }
-
-.studied_words {
-  border: 1px dotted grey;
+.wrapper_statistic > h4 {
+  margin-bottom: 14px;
 }
-
+.studied_words {
+  /* border: 1px dotted grey; */
+  border-radius: 2px;
+  padding: 12px;
+  box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.15);
+}
+.studied_words > h5 {
+  font-family: Roboto;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+.progress {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 8px;
+}
 .progress_bar {
-  width: 80%;
+  width: 75%;
   height: 8px;
   background-color: #f5f5f5;
   display: flex;
   justify-content: start;
+  border-radius: 8px;
 }

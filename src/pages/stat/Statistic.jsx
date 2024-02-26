@@ -16,20 +16,22 @@ const Statistic = () => {
   const styleBar = {
     backgroundColor: "#1890ff",
     width: statisticWidth,
-    borderRadius: "2px",
+    borderRadius: "8px",
   };
   return (
     <section className={s.statistic_area}>
       <div className={s.wrapper_statistic}>
         <h4>Персональная статистика</h4>
         <div className={s.studied_words}>
-          Изучено слов
-          <div className={s.progress_bar}>
-            <div style={styleBar}></div>
+          <h5>Изучено слов</h5>
+          <div className={s.progress}>
+            <div className={s.progress_bar}>
+              <div style={styleBar}></div>
+            </div>
+            <span>
+              {studFromAll()} из {allWords.length}
+            </span>
           </div>
-          <span>
-            {studFromAll()} из {allWords.length}
-          </span>
         </div>
       </div>
     </section>
