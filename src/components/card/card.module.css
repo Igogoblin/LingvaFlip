@@ -58,6 +58,7 @@
   background: var(--Volcano-5);
   border: 0px;
   border-radius: 2px;
+  color: #ffffff;
 }
 .button_dont {
   width: 83px;
@@ -65,4 +66,5 @@
   background: var(--Primary-6);
   border: 0px;
   border-radius: 2px;
+  color: #ffffff;
 }

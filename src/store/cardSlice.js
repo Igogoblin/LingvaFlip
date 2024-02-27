@@ -37,7 +37,7 @@ const cardSlice = createSlice({
       const studAll = state.words.find((word) => word.id === action.payload);
       stud.study = true;
       studAll.study = true;
-      console.log(stud);
+      // console.log(stud);
       // state.studied.set(stud.subject, stud);
     },
     takeCard(state) {
@@ -67,6 +67,9 @@ const cardSlice = createSlice({
         }
       });
     },
+    toggleCheckedRandom(state) {
+      state.random = !state.random;
+    },
 
     // studiedCards(state,action){}
 
@@ -86,5 +89,6 @@ export const {
   changeNow,
   resetAllCards,
   resetThema,
+  toggleCheckedRandom,
 } = cardSlice.actions;
 export default cardSlice.reducer;

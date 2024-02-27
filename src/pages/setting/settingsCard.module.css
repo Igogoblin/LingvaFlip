@@ -11,7 +11,7 @@
   align-items: center;
 }
 
-.checkRandom {
+/* .checkRandom {
   appearance: none;
   background-color: #fff;
   margin: 0;
@@ -40,8 +40,30 @@
 }
 .checkRandom:checked::before {
   transform: scale(1);
-}
+} */
 
+.checkRandom {
+  width: 16px;
+  height: 16px;
+  border: 2px solid #007bff; /* Синий цвет */
+  border-radius: 50%;
+  outline: none;
+  cursor: pointer;
+  margin-right: 8px;
+}
+.checkRandom:focus {
+  box-shadow: 0 0 4px #007bff;
+}
+.checkrandom:checked {
+  background-color: #007bff;
+}
+.checkRandom::before {
+  content: "";
+  display: block;
+  width: 0;
+  height: 0;
+  visibility: hidden;
+}
 .settings_text {
   margin: 11px 0 16px 0;
 }

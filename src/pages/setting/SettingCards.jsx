@@ -1,6 +1,28 @@
 import s from "./settingsCard.module.css";
+import { useDispatch, useSelector } from "react-redux";
+import { toggleCheckedRandom } from "../../store/cardSlice";
+import SettingsThema from "./SettingsThema";
 
 function SettingCards() {
+  const dispatch = useDispatch();
+  const words = useSelector((state) => state.cards.words);
+  // isChecked = useSelector();
+  // const storedCheckboxState = JSON.parse(localStorage.getItem('checkboxState'));
+  //   if (storedCheckboxState !== null) {
+  //     dispatch(toggleCheckbox()); // Может потребоваться обновить хранилище Redux
+  //   }
+  // }, [dispatch]);
+
+  const handleCheckboxChange = () => {
+    dispatch(toggleCheckedRandom());
+    // localStorage.setItem("checkboxState", JSON.stringify(!isChecked));
+  };
+  let count = [];
+
+  words.forEach((element) => {
+    if (element.subject != count[count.length - 1]) count.push(element.subject);
+  });
+  console.log(count);
   return (
     <section className={s.section_setting}>
       <div className={s.wrapper_setting}>
@@ -10,10 +32,28 @@ function SettingCards() {
           на чем-то одном и изучать слова из разных тем одновременно:
         </p>
         <form className={s.check_area}>
-          <input type="checkbox" className={s.checkRandom}></input>{" "}
+          <input
+            type="checkbox"
+            className={s.checkRandom}
+            onChange={handleCheckboxChange}
+            // checked={isChecked}
+          ></input>{" "}
           <span>Все темы рандомно</span>
         </form>
         <div>Доступные темы</div>
+        <>
+          {count.map((el, index) => (
+            <SettingsThema
+              key={index}
+              thema={el}
+              option={count}
+            ></SettingsThema>
+          ))}
+        </>
+        {/* {count.map((el, index) => (
+          
+          // <SettingsThema key={index} thema={el} ontion={count}></SettingsThema>
+        ))} */}
       </div>
     </section>
   );

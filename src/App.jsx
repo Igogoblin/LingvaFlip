@@ -32,6 +32,7 @@ function App() {
           ></Route>
           <Route
             path="/lingvaflip/settings"
+            // exact={true.toString()}
             element={<SettingCards></SettingCards>}
           ></Route>
           <Route path="*" element={<NotFound></NotFound>}></Route>
