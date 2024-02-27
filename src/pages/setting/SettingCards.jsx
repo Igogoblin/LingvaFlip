@@ -1,11 +1,18 @@
 import s from "./settingsCard.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import { toggleCheckedRandom } from "../../store/cardSlice";
+import { useState } from "react";
 import SettingsThema from "./SettingsThema";
 
 function SettingCards() {
   const dispatch = useDispatch();
   const words = useSelector((state) => state.cards.words);
+
+  const [isOpen, setIsOpen] = useState(false);
+  const togglePopup = () => {
+    setIsOpen(!isOpen);
+  };
+
   // isChecked = useSelector();
   // const storedCheckboxState = JSON.parse(localStorage.getItem('checkboxState'));
   //   if (storedCheckboxState !== null) {
@@ -40,20 +47,18 @@ function SettingCards() {
           ></input>{" "}
           <span>Все темы рандомно</span>
         </form>
-        <div>Доступные темы</div>
-        <>
-          {count.map((el, index) => (
+        <div className={s.check_thema} onClick={togglePopup}>
+          Доступные темы
+        </div>
+
+        {isOpen &&
+          count.map((el, index) => (
             <SettingsThema
               key={index}
               thema={el}
               option={count}
             ></SettingsThema>
           ))}
-        </>
-        {/* {count.map((el, index) => (
-          
-          // <SettingsThema key={index} thema={el} ontion={count}></SettingsThema>
-        ))} */}
       </div>
     </section>
   );
