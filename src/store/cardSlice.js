@@ -70,6 +70,9 @@ const cardSlice = createSlice({
     toggleCheckedRandom(state) {
       state.random = !state.random;
     },
+    setThema(state, action) {
+      console.log(action.payload);
+    },
 
     // studiedCards(state,action){}
 
@@ -90,5 +93,6 @@ export const {
   resetAllCards,
   resetThema,
   toggleCheckedRandom,
+  setThema,
 } = cardSlice.actions;
 export default cardSlice.reducer;

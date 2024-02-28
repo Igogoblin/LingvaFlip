@@ -88,3 +88,7 @@
   border-color: #000 transparent transparent transparent;
   margin-right: 8px; /* Расстояние между стрелкой и текстом */
 }
+.thema_item {
+  border: none;
+  background: #ffffff;
+}

@@ -72,10 +72,14 @@ function Card() {
     <section>
       <div className={s.card_area}>
         <div className={s.card_box}>
-          <h4>{ourCard.subject}</h4>
+          <h4 className={s.card_thema}>{ourCard.subject}</h4>
           <div className={s.card}>
-            <div className={s.front}>{ourCard.word}</div>
-            <div className={s.back}>{ourCard.translate}</div>
+            <div className={s.front}>
+              <span>{ourCard.word}</span>
+            </div>
+            <div className={s.back}>
+              <span>{ourCard.translate}</span>
+            </div>
           </div>
           <div className={s.card_panel}>
             <button className={s.button_skip} onClick={miss}>
