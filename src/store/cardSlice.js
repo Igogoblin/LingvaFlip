@@ -10,6 +10,7 @@ const cardSlice = createSlice({
     now: 1,
     card: undefined,
     random: false,
+    subjects: new Map(),
     // studied: new Map(),
     // studied: [],
   },
@@ -72,12 +73,14 @@ const cardSlice = createSlice({
     },
     setThema(state, action) {
       console.log(action.payload);
+      state.subjects.set(action.payload);
     },
 
     // studiedCards(state,action){}
 
     // showStudy(state){
-
+    // const newArray = Array.from({ length }, () => Math.floor(Math.random() * (max - min + 1)) + min);
+    // setRandomNumbers(newArray)
     // }
     // Settings -------------------------------------------------------------
   },

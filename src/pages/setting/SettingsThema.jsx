@@ -5,11 +5,17 @@ import { setThema } from "../../store/cardSlice";
 
 const SettingsThema = (prop) => {
   const dispatch = useDispatch();
+  // const [isChecked, setIsChecked] = useState();
   // let words = useSelector((state) => state.cards.words);
   // console.log(words);
-  const checkThema = () => {
+  // const [isChecked,setIsChecked]= useState(false);
+  const checkThema = (value) => {
+    console.log(value);
     dispatch(setThema(prop.thema));
   };
+  // const getChecked = (value) => {
+  //   console.log("value", value);
+  // };
 
   return (
     <div>
@@ -18,6 +24,8 @@ const SettingsThema = (prop) => {
           type="checkbox"
           name="check"
           id="shoose_thema"
+          // checked={setIsChecked(!isChecked)}
+          // onChange={getChecked(this)}
           onClick={checkThema}
         />
         <button

@@ -61,6 +61,7 @@ const ThemaStudied = (prop) => {
                 className={s.word_place}
               >
                 <span>{word.word}</span>
+                <span className={s.line}>|</span>
                 <span>{word.translate}</span>
               </li>
             ) : (
