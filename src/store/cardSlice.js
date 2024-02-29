@@ -10,7 +10,7 @@ const cardSlice = createSlice({
     now: 1,
     card: undefined,
     random: false,
-    subjects: new Map(),
+    subjects: new Set(),
     // studied: new Map(),
     // studied: [],
   },
@@ -72,8 +72,20 @@ const cardSlice = createSlice({
       state.random = !state.random;
     },
     setThema(state, action) {
-      console.log(action.payload);
-      state.subjects.set(action.payload);
+      // console.log(action);
+      // console.log(action.payload);
+      // console.log(Object.keys(action.payload)[0]);
+      // console.log(Object.values(action.payload)[0]);
+      // const ourThema = {
+      //   [Object.keys(action.payload)[0]]: Object.values(action.payload)[0],
+      // };
+      // console.log(ourThema);
+      // console.log(Object.values(action.payload)[0]);
+      Object.values(action.payload)[0]
+        ? state.subjects.delete(Object.keys(action.payload)[0])
+        : state.subjects.add(Object.keys(action.payload)[0]);
+      // state.subjects.add(ourThema);
+      // console.log(state.subjects.has(Object.keys(action.payload)[0]));
     },
 
     // studiedCards(state,action){}
