@@ -5,9 +5,11 @@ import { useState } from "react";
 
 const SettingsThema = (prop) => {
   const dispatch = useDispatch();
-  const [isChecked, setIsChecked] = useState(false);
   let words = useSelector((state) => state.cards.subjects);
-  console.log(words);
+  const [isChecked, setIsChecked] = useState(words.has(prop.thema));
+
+  // console.log(words);
+  // console.log(words.has(prop.thema));
   // const [isChecked,setIsChecked]= useState(false);
   const checkThema = (value) => {
     // console.log(prop.thema);
