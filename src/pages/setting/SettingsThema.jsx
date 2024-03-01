@@ -8,19 +8,10 @@ const SettingsThema = (prop) => {
   let words = useSelector((state) => state.cards.subjects);
   const [isChecked, setIsChecked] = useState(words.has(prop.thema));
 
-  // console.log(words);
-  // console.log(words.has(prop.thema));
-  // const [isChecked,setIsChecked]= useState(false);
-  const checkThema = (value) => {
-    // console.log(prop.thema);
-    // console.log(isChecked);
-    // const mid = prop.thema;
-    // const ourValue = { prop.thema: isChecked };
+  const checkThema = () => {
     dispatch(setThema({ [prop.thema]: isChecked }));
   };
-  // const getChecked = (value) => {
-  //   console.log("value", value);
-  // }; nativeEvent.srcElement.disabled
+
   const handleCheckboxChange = () => {
     setIsChecked(!isChecked);
   };
@@ -33,16 +24,10 @@ const SettingsThema = (prop) => {
           name="check"
           id="shoose_thema"
           checked={isChecked}
-          // checked={setIsChecked(!isChecked)}
           onChange={handleCheckboxChange}
           onClick={checkThema}
         />
-        <button
-          className={s.thema_item}
-          // onClick={toggleDropdown}
-        >
-          {prop.thema}
-        </button>
+        <button className={s.thema_item}>{prop.thema}</button>
       </div>
     </div>
   );
