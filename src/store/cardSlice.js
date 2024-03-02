@@ -11,6 +11,7 @@ const cardSlice = createSlice({
     card: undefined,
     random: false,
     subjects: new Set(),
+    arrRandom: [],
     // studied: new Map(),
     // studied: [],
   },
@@ -87,7 +88,12 @@ const cardSlice = createSlice({
       // state.subjects.add(ourThema);
       // console.log(state.subjects.has(Object.keys(action.payload)[0]));
     },
+    generateRandom(state) {
+      console.log("state.activeWords.length ", state.activeWords.length);
 
+      // state.arrRandom=state.activeWords.from((state.activeWords.length),()=>Math.floor(Math.random()*(state.activeWords.length-1-1+1))
+      // const newArray = Array.from({ length }, () => Math.floor(Math.random() * (max - min + 1)) + min);
+    },
     // studiedCards(state,action){}
 
     // showStudy(state){
@@ -95,6 +101,7 @@ const cardSlice = createSlice({
     // setRandomNumbers(newArray)
     // }
     // Settings -------------------------------------------------------------
+    // random, localStorage
   },
 });
 
