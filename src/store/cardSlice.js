@@ -105,9 +105,12 @@ const cardSlice = createSlice({
     },
     generateRandom(state) {
       console.log("state.activeWords.length ", state.activeWords.length);
-
-      // state.arrRandom=state.activeWords.from((state.activeWords.length),()=>Math.floor(Math.random()*(state.activeWords.length-1-1+1))
-      // const newArray = Array.from({ length }, () => Math.floor(Math.random() * (max - min + 1)) + min);
+      const ourArray = state.activeWords.map((element) => {
+        return element.id;
+      });
+      ourArray.sort(() => Math.random() - 0.5);
+      console.log(ourArray);
+      state.arrRandom = [...ourArray];
     },
     // studiedCards(state,action){}
 
@@ -132,5 +135,6 @@ export const {
   toggleCheckedRandom,
   setThema,
   delThema,
+  generateRandom,
 } = cardSlice.actions;
 export default cardSlice.reducer;
