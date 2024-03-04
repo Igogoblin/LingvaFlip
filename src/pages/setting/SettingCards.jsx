@@ -29,7 +29,7 @@ function SettingCards() {
   words.forEach((element) => {
     if (element.subject != count[count.length - 1]) count.push(element.subject);
   });
-  console.log(count);
+  // console.log(count);
   return (
     <section className={s.section_setting}>
       <div className={s.wrapper_setting}>

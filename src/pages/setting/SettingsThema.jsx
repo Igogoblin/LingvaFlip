@@ -1,6 +1,6 @@
 import s from "./settingsCard.module.css";
 import { useSelector, useDispatch } from "react-redux";
-import { setThema } from "../../store/cardSlice";
+import { setThema, delThema } from "../../store/cardSlice";
 import { useState } from "react";
 
 const SettingsThema = (prop) => {
@@ -9,7 +9,16 @@ const SettingsThema = (prop) => {
   const [isChecked, setIsChecked] = useState(words.has(prop.thema));
 
   const checkThema = () => {
-    dispatch(setThema({ [prop.thema]: isChecked }));
+    //console.log({ [prop.thema]: isChecked });
+    if (isChecked) {
+      //console.log(isChecked);
+      dispatch(delThema(prop.thema));
+    } else {
+      //console.log(isChecked);
+      dispatch(setThema(prop.thema));
+    }
+    //console.log(words);
+    // dispatch(setThema({ [prop.thema]: isChecked }));
   };
 
   const handleCheckboxChange = () => {

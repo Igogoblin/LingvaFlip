@@ -73,6 +73,7 @@ const cardSlice = createSlice({
       state.random = !state.random;
     },
     setThema(state, action) {
+      state.subjects.add(action.payload);
       // console.log(action);
       // console.log(action.payload);
       // console.log(Object.keys(action.payload)[0]);
@@ -80,13 +81,16 @@ const cardSlice = createSlice({
       // const ourThema = {
       //   [Object.keys(action.payload)[0]]: Object.values(action.payload)[0],
       // };
-      // console.log(ourThema);
-      // console.log(Object.values(action.payload)[0]);
-      Object.values(action.payload)[0]
-        ? state.subjects.delete(Object.keys(action.payload)[0])
-        : state.subjects.add(Object.keys(action.payload)[0]);
+      // // console.log(ourThema);
+      // // console.log(Object.values(action.payload)[0]);
+      // Object.values(action.payload)[0]
+      //? state.subjects.delete(Object.keys(action.payload)[0])
+      //   : state.subjects.add(Object.keys(action.payload)[0]);
       // state.subjects.add(ourThema);
       // console.log(state.subjects.has(Object.keys(action.payload)[0]));
+    },
+    delThema(state, action) {
+      state.subjects.delete(action.payload);
     },
     generateRandom(state) {
       console.log("state.activeWords.length ", state.activeWords.length);
@@ -116,5 +120,6 @@ export const {
   resetThema,
   toggleCheckedRandom,
   setThema,
+  delThema,
 } = cardSlice.actions;
 export default cardSlice.reducer;

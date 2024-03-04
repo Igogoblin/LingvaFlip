@@ -8,7 +8,7 @@ const ThemaStudied = (prop) => {
   const dispatch = useDispatch();
   let allWords = 0;
   let wordsCount = 0;
-  console.log(words);
+  // console.log(words);
 
   const [isOpen, setIsOpen] = useState(false);
   // const [selectedOption, setSelectedOption] = useState(null);

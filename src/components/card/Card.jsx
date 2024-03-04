@@ -66,7 +66,7 @@ function Card() {
       setCount(count++);
     }
   }
-  console.log(card);
+  // console.log(card);
   // maybe join two function in one !!!!!!!!!!!!!!!!!!!!!!!!!!
   return (
     <section>

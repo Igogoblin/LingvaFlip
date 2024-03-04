@@ -14,14 +14,14 @@ const Studied = () => {
     setIsOpen(!isOpen);
   };
 
-  console.log(studied);
+  // console.log(studied);
 
   let count = [];
 
   studied.forEach((element) => {
     if (element.subject != count[count.length - 1]) count.push(element.subject);
   });
-  console.log(count);
+  // console.log(count);
 
   function resetAll() {
     dispatch(resetAllCards());
