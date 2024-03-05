@@ -1,6 +1,6 @@
 import s from "./settingsCard.module.css";
 import { useSelector, useDispatch } from "react-redux";
-import { setThema, delThema } from "../../store/cardSlice";
+import { setThema, delThema, setActiveWords } from "../../store/cardSlice";
 import { useState } from "react";
 
 const SettingsThema = (prop) => {
@@ -19,6 +19,7 @@ const SettingsThema = (prop) => {
       //console.log(isChecked);
       dispatch(setThema(prop.thema));
     }
+    dispatch(setActiveWords());
     console.log(words);
     // dispatch(setThema({ [prop.thema]: isChecked }));
   };

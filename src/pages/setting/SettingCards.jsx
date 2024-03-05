@@ -1,6 +1,10 @@
 import s from "./settingsCard.module.css";
 import { useDispatch, useSelector } from "react-redux";
-import { toggleCheckedRandom, generateRandom } from "../../store/cardSlice";
+import {
+  toggleCheckedRandom,
+  generateRandom,
+  setActiveWords,
+} from "../../store/cardSlice";
 import { useState } from "react";
 import SettingsThema from "./SettingsThema";
 
@@ -22,8 +26,10 @@ function SettingCards() {
   // }, [dispatch]);
 
   const handleCheckboxChange = () => {
+    dispatch(setActiveWords());
     dispatch(toggleCheckedRandom());
     dispatch(generateRandom());
+    console.log("for random : ");
     console.log(test);
     // localStorage.setItem("checkboxState", JSON.stringify(!isChecked));
   };

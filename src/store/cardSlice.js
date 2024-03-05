@@ -75,26 +75,8 @@ const cardSlice = createSlice({
     },
     setThema(state, action) {
       const ourThema = new Set(state.subjects);
-      // console.log(ourThema);
       ourThema.add(action.payload);
       state.subjects = Array.from(ourThema);
-
-      // state.subjects.add(action.payload);
-
-      // console.log(action);
-      // console.log(action.payload);
-      // console.log(Object.keys(action.payload)[0]);
-      // console.log(Object.values(action.payload)[0]);
-      // const ourThema = {
-      //   [Object.keys(action.payload)[0]]: Object.values(action.payload)[0],
-      // };
-      // // console.log(ourThema);
-      // // console.log(Object.values(action.payload)[0]);
-      // Object.values(action.payload)[0]
-      //? state.subjects.delete(Object.keys(action.payload)[0])
-      //   : state.subjects.add(Object.keys(action.payload)[0]);
-      // state.subjects.add(ourThema);
-      // console.log(state.subjects.has(Object.keys(action.payload)[0]));
     },
     delThema(state, action) {
       // state.subjects.delete(action.payload);
@@ -103,14 +85,22 @@ const cardSlice = createSlice({
       ourThema.delete(action.payload);
       state.subjects = Array.from(ourThema);
     },
-    generateRandom(state) {
+    generateRandom(state, action) {
+      console.log(action);
       console.log("state.activeWords.length ", state.activeWords.length);
-      const ourArray = state.activeWords.map((element) => {
-        return element.id;
+      const ourArray = state.activeWords.sort(() => Math.random() - 0.5);
+      state.activeWords = [...ourArray];
+    },
+    setActiveWords(state) {
+      console.log(state.activeWords);
+      const ourThema = new Set(state.subjects);
+      const activeWords = state.words.map((element) => {
+        if (ourThema.size === 0) {
+        }
+        // console.log();
+        // if(element.study===false){
+        // }
       });
-      ourArray.sort(() => Math.random() - 0.5);
-      console.log(ourArray);
-      state.arrRandom = [...ourArray];
     },
     // studiedCards(state,action){}
 
@@ -136,5 +126,6 @@ export const {
   setThema,
   delThema,
   generateRandom,
+  setActiveWords,
 } = cardSlice.actions;
 export default cardSlice.reducer;
