@@ -8,13 +8,11 @@ const cardSlice = createSlice({
     words: allWords,
     activeWords: allWords,
     now: 1,
-    card: undefined,
+    card: localStorage.getItem("lingvaCard")
+      ? JSON.parse(localStorage.getItem("lingvaCard"))
+      : undefined,
     random: false,
-    // subjects: new Set(),
     subjects: [],
-    arrRandom: [],
-    // studied: new Map(),
-    // studied: [],
   },
   reducers: {
     showJ(state) {
@@ -28,6 +26,7 @@ const cardSlice = createSlice({
       const t = state.activeWords.find((word, index) => index === state.now);
       // console.log(t);
       state.card = t;
+      // localStorage.setItem("lingvaCard",JSON.stringify(state.card));
     },
     notStudy(state, action) {
       const stud = state.activeWords.find((word) => word.id === action.payload);
