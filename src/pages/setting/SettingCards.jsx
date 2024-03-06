@@ -13,11 +13,12 @@ function SettingCards() {
   const words = useSelector((state) => state.cards.words);
   const test = useSelector((state) => state);
 
+  const [isAll, setIsAll] = useState(test.cards.random);
   const [isOpen, setIsOpen] = useState(false);
   const togglePopup = () => {
     setIsOpen(!isOpen);
   };
-
+  console.log(test.cards.random);
   // isChecked = useSelector();
   // const storedCheckboxState = JSON.parse(localStorage.getItem('checkboxState'));
   //   if (storedCheckboxState !== null) {
@@ -27,10 +28,12 @@ function SettingCards() {
 
   const handleCheckboxChange = () => {
     dispatch(setActiveWords());
-    dispatch(toggleCheckedRandom());
+    setIsAll(dispatch(toggleCheckedRandom()));
     dispatch(generateRandom());
+
     console.log("for random : ");
     console.log(test);
+
     // localStorage.setItem("checkboxState", JSON.stringify(!isChecked));
   };
   let count = [];
@@ -52,7 +55,7 @@ function SettingCards() {
             type="checkbox"
             className={s.checkRandom}
             onChange={handleCheckboxChange}
-            // checked={isChecked}
+            checked={isAll}
           ></input>{" "}
           <span>Все темы рандомно</span>
         </form>

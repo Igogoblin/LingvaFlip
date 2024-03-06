@@ -19,8 +19,8 @@ const cardSlice = createSlice({
   reducers: {
     showJ(state) {
       // console.log(state.words[0].id);
-      console.log(state.activeWords);
-      console.log("subjects ", state.subjects);
+      // console.log(state.activeWords);
+      // console.log("subjects ", state.subjects);
       // console.log(state.scope);
     },
     nextCard(state) {
@@ -89,31 +89,24 @@ const cardSlice = createSlice({
     generateRandom(state) {
       // console.log(action);
       // console.log("state.activeWords.length ", state.activeWords.length);
-      const ourArray = state.activeWords.sort(() => Math.random() - 0.5);
+      let ourArray;
+      if (state.random) {
+        ourArray = state.activeWords.sort(() => Math.random() - 0.5);
+      } else {
+        ourArray = state.activeWords.sort();
+      }
       state.activeWords = [...ourArray];
     },
     setActiveWords(state) {
-      console.log(state.activeWords);
       const ourThema = new Set(state.subjects);
-      let c = 0;
       const active = state.words.filter((element) => {
         if (ourThema.size === 0 && element.study === false) {
-          console.log("if we don't hame any theme");
           return element;
         }
         if (ourThema.has(element.subject) && element.study === false) {
-          c++;
-          console.log(element.subject);
-          console.log(ourThema.has(element.subject));
-          console.log("here we are ");
-          console.log("count = ", c);
           return element;
         }
-        // console.log();
-        // if(element.study===false){
-        // }
       });
-      console.log(active);
       state.activeWords = [...active];
     },
     // studiedCards(state,action){}

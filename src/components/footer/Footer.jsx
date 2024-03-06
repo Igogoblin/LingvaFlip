@@ -18,7 +18,7 @@ function Footer() {
         {/* <div className="footer">
 
         </div> */}
-        <Button className={s.button} onClick={show()}></Button>
+        <Button className={s.button} onClick={show}></Button>
       </div>
     </footer>
   );
