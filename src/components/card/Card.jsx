@@ -72,6 +72,7 @@ function Card() {
     <section>
       <div className={s.card_area}>
         <div className={s.card_box}>
+          {console.log(ourCard)}
           <h4 className={s.card_thema}>{ourCard.subject}</h4>
           <div className={s.card}>
             <div className={s.front}>

@@ -1,6 +1,11 @@
 import s from "./settingsCard.module.css";
 import { useSelector, useDispatch } from "react-redux";
-import { setThema, delThema, setActiveWords } from "../../store/cardSlice";
+import {
+  setThema,
+  delThema,
+  setActiveWords,
+  generateRandom,
+} from "../../store/cardSlice";
 import { useState } from "react";
 
 const SettingsThema = (prop) => {
@@ -20,6 +25,7 @@ const SettingsThema = (prop) => {
       dispatch(setThema(prop.thema));
     }
     dispatch(setActiveWords());
+    dispatch(generateRandom());
     console.log(words);
     // dispatch(setThema({ [prop.thema]: isChecked }));
   };
