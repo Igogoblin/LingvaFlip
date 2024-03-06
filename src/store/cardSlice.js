@@ -5,14 +5,24 @@ enableMapSet();
 const cardSlice = createSlice({
   name: "cards",
   initialState: {
-    words: allWords,
-    activeWords: allWords,
-    now: 1,
+    words: localStorage.getItem("lingvaWords")
+      ? JSON.parse(localStorage.getItem("lingvaWords"))
+      : allWords,
+    activeWords: localStorage.getItem("lingvaActiveWords")
+      ? JSON.parse(localStorage.getItem("lingvaActiveWords"))
+      : allWords,
+    now: JSON.parse(localStorage.getItem("lingvaNow"))
+      ? JSON.parse(localStorage.getItem("lingvaNow"))
+      : 1,
     card: localStorage.getItem("lingvaCard")
       ? JSON.parse(localStorage.getItem("lingvaCard"))
       : undefined,
-    random: false,
-    subjects: [],
+    random: localStorage.getItem("lingvaRandom")
+      ? JSON.parse(localStorage.getItem("lingvaRandom"))
+      : false,
+    subjects: localStorage.getItem("lingvaSubjects")
+      ? JSON.parse(localStorage.getItem("lingvaSubjects"))
+      : [],
   },
   reducers: {
     showJ(state) {
@@ -26,7 +36,7 @@ const cardSlice = createSlice({
       const t = state.activeWords.find((word, index) => index === state.now);
       // console.log(t);
       state.card = t;
-      // localStorage.setItem("lingvaCard",JSON.stringify(state.card));
+      localStorage.setItem("lingvaCard", JSON.stringify(state.card));
     },
     notStudy(state, action) {
       const stud = state.activeWords.find((word) => word.id === action.payload);
@@ -34,6 +44,11 @@ const cardSlice = createSlice({
       stud.study = false;
       studAll.study = false;
       // state.studied.delete(stud.subject, stud);
+      localStorage.setItem("lingvaWords", JSON.stringify(state.words));
+      localStorage.setItem(
+        "lingvaActiveWords",
+        JSON.stringify(state.activeWords)
+      );
     },
     study(state, action) {
       const stud = state.activeWords.find((word) => word.id === action.payload);
@@ -42,12 +57,19 @@ const cardSlice = createSlice({
       studAll.study = true;
       // console.log(stud);
       // state.studied.set(stud.subject, stud);
+      localStorage.setItem("lingvaWords", JSON.stringify(state.words));
+      localStorage.setItem(
+        "lingvaActiveWords",
+        JSON.stringify(state.activeWords)
+      );
     },
     takeCard(state) {
       state.card = state.activeWords[state.now];
+      localStorage.setItem("lingvaCard", JSON.stringify(state.card));
     },
     changeNow(state) {
       state.now = state.now + 1;
+      localStorage.setItem("lingvaNow", JSON.stringify(state.now));
     },
     resetAllCards(state) {
       state.words.forEach((element) => {
@@ -61,6 +83,11 @@ const cardSlice = createSlice({
         }
       });
       state.now = 1;
+      localStorage.setItem("lingvaWords", JSON.stringify(state.words));
+      localStorage.setItem(
+        "lingvaActiveWords",
+        JSON.stringify(state.activeWords)
+      );
     },
     resetThema(state, action) {
       console.log(action.payload);
@@ -69,14 +96,21 @@ const cardSlice = createSlice({
           word.study = false;
         }
       });
+      localStorage.setItem("lingvaWords", JSON.stringify(state.words));
+      localStorage.setItem(
+        "lingvaActiveWords",
+        JSON.stringify(state.activeWords)
+      );
     },
     toggleCheckedRandom(state) {
       state.random = !state.random;
+      localStorage.setItem("lingvaRandom", JSON.stringify(state.random));
     },
     setThema(state, action) {
       const ourThema = new Set(state.subjects);
       ourThema.add(action.payload);
       state.subjects = Array.from(ourThema);
+      localStorage.setItem("lingvaSubjects", JSON.stringify(state.subjects));
     },
     delThema(state, action) {
       // state.subjects.delete(action.payload);
@@ -84,6 +118,7 @@ const cardSlice = createSlice({
       // console.log(ourThema);
       ourThema.delete(action.payload);
       state.subjects = Array.from(ourThema);
+      localStorage.setItem("lingvaSubjects", JSON.stringify(state.subjects));
     },
     generateRandom(state) {
       // console.log(action);
@@ -95,6 +130,10 @@ const cardSlice = createSlice({
         ourArray = state.activeWords.sort();
       }
       state.activeWords = [...ourArray];
+      localStorage.setItem(
+        "lingvaActiveWords",
+        JSON.stringify(state.activeWords)
+      );
     },
     setActiveWords(state) {
       const ourThema = new Set(state.subjects);
@@ -107,6 +146,11 @@ const cardSlice = createSlice({
         }
       });
       state.activeWords = [...active];
+      localStorage.setItem("lingvaWords", JSON.stringify(state.words));
+      localStorage.setItem(
+        "lingvaActiveWords",
+        JSON.stringify(state.activeWords)
+      );
     },
     // studiedCards(state,action){}
 
