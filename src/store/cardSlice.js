@@ -14,9 +14,11 @@ const cardSlice = createSlice({
     now: JSON.parse(localStorage.getItem("lingvaNow"))
       ? JSON.parse(localStorage.getItem("lingvaNow"))
       : 1,
-    card: localStorage.getItem("lingvaCard")
-      ? JSON.parse(localStorage.getItem("lingvaCard"))
-      : undefined,
+    card:
+      // localStorage.getItem("lingvaCard")
+      //   ? JSON.parse(localStorage.getItem("lingvaCard"))
+      //   :
+      undefined,
     random: localStorage.getItem("lingvaRandom")
       ? JSON.parse(localStorage.getItem("lingvaRandom"))
       : false,
@@ -78,16 +80,18 @@ const cardSlice = createSlice({
         }
       });
       state.activeWords.forEach((element) => {
+        console.log(element);
         if (element.study === true) {
           element.study = false;
         }
       });
-      state.now = 1;
+      state.now = state.activeWords[0].id;
       localStorage.setItem("lingvaWords", JSON.stringify(state.words));
       localStorage.setItem(
         "lingvaActiveWords",
         JSON.stringify(state.activeWords)
       );
+      localStorage.setItem("lingvaNow", JSON.stringify(state.now));
     },
     resetThema(state, action) {
       console.log(action.payload);
@@ -124,10 +128,12 @@ const cardSlice = createSlice({
       // console.log(action);
       // console.log("state.activeWords.length ", state.activeWords.length);
       let ourArray;
-      if (state.random) {
+      if (!state.random) {
+        console.log("when random is true");
         ourArray = state.activeWords.sort(() => Math.random() - 0.5);
       } else {
-        ourArray = state.activeWords.sort();
+        console.log("random is false !!");
+        ourArray = state.activeWords.sort((a, b) => a - b);
       }
       state.activeWords = [...ourArray];
       localStorage.setItem(

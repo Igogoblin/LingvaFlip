@@ -1,7 +1,11 @@
 import { useSelector, useDispatch } from "react-redux";
 import { useState } from "react";
 import s from "./studied.module.css";
-import { resetThema } from "../../store/cardSlice";
+import {
+  resetThema,
+  setActiveWords,
+  generateRandom,
+} from "../../store/cardSlice";
 
 const ThemaStudied = (prop) => {
   let words = useSelector((state) => state.cards.words);
@@ -37,6 +41,11 @@ const ThemaStudied = (prop) => {
   // const resetThema = (thema) => {
   //   dispatch(resetThema(thema));
   // };
+  const reset = () => {
+    dispatch(resetThema(prop.thema));
+    // dispatch(setActiveWords());
+    dispatch(generateRandom());
+  };
 
   return (
     <div className={s.notUl}>
@@ -47,7 +56,14 @@ const ThemaStudied = (prop) => {
           </button>
           {countWords(prop.thema)}({wordsCount} из {allWords})
         </span>
-        <span onClick={() => dispatch(resetThema(prop.thema))}>сбросить</span>
+        <span
+          onClick={
+            // () => dispatch(resetThema(prop.thema))
+            reset
+          }
+        >
+          сбросить
+        </span>
       </div>
 
       {isOpen && (

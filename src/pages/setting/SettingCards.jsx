@@ -12,13 +12,13 @@ function SettingCards() {
   const dispatch = useDispatch();
   const words = useSelector((state) => state.cards.words);
   const test = useSelector((state) => state);
-
+  // console.log("what we have in random :", test.cards.random);
   const [isAll, setIsAll] = useState(test.cards.random);
   const [isOpen, setIsOpen] = useState(false);
   const togglePopup = () => {
     setIsOpen(!isOpen);
   };
-  console.log(test.cards.random);
+  // console.log(test.cards.random);
   // isChecked = useSelector();
   // const storedCheckboxState = JSON.parse(localStorage.getItem('checkboxState'));
   //   if (storedCheckboxState !== null) {
@@ -28,11 +28,12 @@ function SettingCards() {
 
   const handleCheckboxChange = () => {
     dispatch(setActiveWords());
-    setIsAll(dispatch(toggleCheckedRandom()));
+    dispatch(toggleCheckedRandom());
     dispatch(generateRandom());
-
-    console.log("for random : ");
-    console.log(test);
+    setIsAll(test.cards.random);
+    // console.log(test.cards.random);
+    // console.log("for random : ");
+    // console.log(test);
 
     // localStorage.setItem("checkboxState", JSON.stringify(!isChecked));
   };
@@ -53,10 +54,11 @@ function SettingCards() {
         <form className={s.check_area}>
           <input
             type="checkbox"
-            className={s.checkRandom}
+            className={s.checkrandom}
             onChange={handleCheckboxChange}
             checked={isAll}
-          ></input>{" "}
+          ></input>
+          {/* {" "} */}
           <span>Все темы рандомно</span>
         </form>
         <div className={s.check_thema} onClick={togglePopup}>

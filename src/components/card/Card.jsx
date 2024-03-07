@@ -20,6 +20,9 @@ function Card() {
   const dispatch = useDispatch();
   // console.log(card);
   console.log(c);
+  console.log(card);
+  console.log(localStorage.getItem("lingvaCard"));
+
   if (c === undefined) {
     dispatch(takeCard());
     // setOurCard

@@ -1,21 +1,20 @@
 import s from "../footer/footer.module.css";
-// import { useSelector } from "react-redux";
-import { useDispatch } from "react-redux";
-import { showJ } from "../../store/cardSlice";
+import { useSelector } from "react-redux";
+// import { useDispatch } from "react-redux";
+// import { showJ } from "../../store/cardSlice";
 // import t from "../../store/words.json";
 
 const Button = () => {
-  const dispatch = useDispatch();
-  // const test = useSelector((state) => state);
+  // const dispatch = useDispatch();
+  const test = useSelector((state) => state.cards);
   // console.log(t);
-  // function tes() {
-  //   console.log("test");
-
-  // }
+  function tes() {
+    console.log(test);
+  }
   return (
     <button
       className={s.button}
-      onClick={() => dispatch(showJ())}
+      onClick={tes}
       // onClick={tes}
     >
       Далее

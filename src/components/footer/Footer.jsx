@@ -1,15 +1,15 @@
-import { showJ } from "../../store/cardSlice";
+// import { showJ } from "../../store/cardSlice";
 import Button from "../button/Button";
 import s from "./footer.module.css";
-import { useDispatch } from "react-redux";
+// import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
 
 function Footer() {
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
   const sh = useSelector((state) => state.cards);
 
   const show = () => {
-    dispatch(showJ());
+    // dispatch(showJ());
     console.log(sh);
   };
   return (

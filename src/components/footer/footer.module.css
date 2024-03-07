@@ -33,4 +33,5 @@ footer {
   /* background: var(--Primary-6, #1890ff); */
   /* drop-shadow/button-primary */
   box-shadow: 0px 2px 0px 0px rgba(0, 0, 0, 0.04);
+  cursor: pointer;
 }

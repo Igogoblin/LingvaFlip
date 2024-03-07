@@ -2,7 +2,11 @@
 import { useSelector, useDispatch } from "react-redux";
 import ThemaStudied from "./ThemaStudied";
 import s from "./studied.module.css";
-import { resetAllCards } from "../../store/cardSlice";
+import {
+  resetAllCards,
+  setActiveWords,
+  generateRandom,
+} from "../../store/cardSlice";
 import { useState } from "react";
 // import { useState } from "react";
 
@@ -25,6 +29,8 @@ const Studied = () => {
 
   function resetAll() {
     dispatch(resetAllCards());
+    dispatch(setActiveWords());
+    dispatch(generateRandom());
     togglePopup();
   }
 
@@ -36,7 +42,8 @@ const Studied = () => {
           <button
             onClick={
               // () => dispatch(resetAllCards())
-              togglePopup
+              // togglePopup
+              resetAll
             }
           >
             Сбросить все карточки
