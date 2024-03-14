@@ -17,7 +17,7 @@ const cardSlice = createSlice({
     card:
       // localStorage.getItem("lingvaCard")
       //   ? JSON.parse(localStorage.getItem("lingvaCard"))
-      //   :
+      //   : allWords[0],
       undefined,
     random: localStorage.getItem("lingvaRandom")
       ? JSON.parse(localStorage.getItem("lingvaRandom"))
@@ -51,6 +51,7 @@ const cardSlice = createSlice({
         "lingvaActiveWords",
         JSON.stringify(state.activeWords)
       );
+      localStorage.setItem("lingvaCard", JSON.stringify(state.activeWords[0]));
     },
     study(state, action) {
       const stud = state.activeWords.find((word) => word.id === action.payload);
@@ -64,6 +65,7 @@ const cardSlice = createSlice({
         "lingvaActiveWords",
         JSON.stringify(state.activeWords)
       );
+      localStorage.setItem("lingvaCard", JSON.stringify(state.activeWords[0]));
     },
     takeCard(state) {
       state.card = state.activeWords[state.now];
@@ -92,6 +94,7 @@ const cardSlice = createSlice({
         JSON.stringify(state.activeWords)
       );
       localStorage.setItem("lingvaNow", JSON.stringify(state.now));
+      localStorage.setItem("lingvaCard", JSON.stringify(state.activeWords[0]));
     },
     resetThema(state, action) {
       console.log(action.payload);
@@ -105,6 +108,7 @@ const cardSlice = createSlice({
         "lingvaActiveWords",
         JSON.stringify(state.activeWords)
       );
+      localStorage.setItem("lingvaCard", JSON.stringify(state.activeWords[0]));
     },
     toggleCheckedRandom(state) {
       state.random = !state.random;
@@ -140,6 +144,7 @@ const cardSlice = createSlice({
         "lingvaActiveWords",
         JSON.stringify(state.activeWords)
       );
+      localStorage.setItem("lingvaCard", JSON.stringify(state.activeWords[0]));
     },
     setActiveWords(state) {
       const ourThema = new Set(state.subjects);
@@ -157,6 +162,7 @@ const cardSlice = createSlice({
         "lingvaActiveWords",
         JSON.stringify(state.activeWords)
       );
+      localStorage.setItem("lingvaCard", JSON.stringify(state.activeWords[0]));
     },
     // studiedCards(state,action){}
 

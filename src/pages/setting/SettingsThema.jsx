@@ -36,7 +36,7 @@ const SettingsThema = (prop) => {
 
   return (
     <div>
-      <div>
+      <div className={s.thema_center}>
         <input
           type="checkbox"
           name="check"
