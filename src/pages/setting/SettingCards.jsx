@@ -18,31 +18,19 @@ function SettingCards() {
   const togglePopup = () => {
     setIsOpen(!isOpen);
   };
-  // console.log(test.cards.random);
-  // isChecked = useSelector();
-  // const storedCheckboxState = JSON.parse(localStorage.getItem('checkboxState'));
-  //   if (storedCheckboxState !== null) {
-  //     dispatch(toggleCheckbox()); // Может потребоваться обновить хранилище Redux
-  //   }
-  // }, [dispatch]);
 
   const handleCheckboxChange = () => {
     dispatch(setActiveWords());
     dispatch(toggleCheckedRandom());
     dispatch(generateRandom());
     setIsAll(test.cards.random);
-    // console.log(test.cards.random);
-    // console.log("for random : ");
-    // console.log(test);
-
-    // localStorage.setItem("checkboxState", JSON.stringify(!isChecked));
   };
   let count = [];
 
   words.forEach((element) => {
     if (element.subject != count[count.length - 1]) count.push(element.subject);
   });
-  // console.log(count);
+
   return (
     <section className={s.section_setting}>
       <div className={s.wrapper_setting}>
