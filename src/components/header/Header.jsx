@@ -9,6 +9,14 @@ function Header() {
   const handleNavLinkClick = (path) => {
     setCurrentPath(path);
     navigate(path);
+    console.log(path);
+    // if (
+    //   path != "/" ||
+    //   path != "/lingvaflip/lern" ||
+    //   path != "/lingvaflip/stat"
+    // ) {
+    //   setCurrentPath("");
+    // }
   };
 
   return (
