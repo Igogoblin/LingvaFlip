@@ -30,3 +30,7 @@ main {
   width: 165px;
   height: 40px;
 } */
+
+button {
+  cursor: pointer;
+}

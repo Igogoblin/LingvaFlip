@@ -27,6 +27,7 @@
   cursor: pointer;
 }
 .notUl {
+  width: 100%;
   flex-direction: column;
 }
 

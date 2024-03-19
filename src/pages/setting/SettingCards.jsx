@@ -14,6 +14,8 @@ function SettingCards() {
   const test = useSelector((state) => state);
   // console.log("what we have in random :", test.cards.random);
   const [isAll, setIsAll] = useState(test.cards.random);
+  console.log(test.cards.random);
+  console.log("isAll ", isAll);
   const [isOpen, setIsOpen] = useState(false);
   const togglePopup = () => {
     setIsOpen(!isOpen);
