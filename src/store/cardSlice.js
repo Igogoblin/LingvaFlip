@@ -46,10 +46,21 @@ const cardSlice = createSlice({
       saveCards();
     },
     notStudy(state, action) {
-      const stud = state.activeWords.find((word) => word.id === action.payload);
-      const studAll = state.words.find((word) => word.id === action.payload);
-      stud.study = false;
-      studAll.study = false;
+      // const stud = state.activeWords.find((word) => word.id === action.payload);
+      // const studAll = state.words.find((word) => word.id === action.payload);
+      // stud.study = false;
+      // studAll.study = false;
+
+      state.activeWords.forEach((word) => {
+        if (word.id === action.payload) {
+          word.study = false;
+        }
+      });
+      state.words.forEach((word) => {
+        if (word.id === action.payload) {
+          word.study = false;
+        }
+      });
       saveCards();
       // state.studied.delete(stud.subject, stud);
       // localStorage.setItem("lingvaWords", JSON.stringify(state.words));
@@ -63,10 +74,22 @@ const cardSlice = createSlice({
       // );
     },
     study(state, action) {
-      const stud = state.activeWords.find((word) => word.id === action.payload);
-      const studAll = state.words.find((word) => word.id === action.payload);
-      stud.study = true;
-      studAll.study = true;
+      // const stud = state.activeWords.find((word) => word.id === action.payload);
+      // const studAll = state.words.find((word) => word.id === action.payload);
+      // stud.study = true;
+      // studAll.study = true;
+
+      state.activeWords.forEach((word) => {
+        if (word.id === action.payload) {
+          word.study = true;
+        }
+      });
+      state.words.forEach((word) => {
+        if (word.id === action.payload) {
+          word.study = true;
+        }
+      });
+
       // console.log(stud);
       saveCards();
       // state.studied.set(stud.subject, stud);

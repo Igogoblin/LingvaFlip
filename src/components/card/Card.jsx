@@ -10,11 +10,12 @@ import {
 } from "../../store/cardSlice";
 
 function Card() {
+  // сделано через промежуточное обновление каунта, которое перебирает активные слова, а надо попробовать через саму карточку в стейте
+
+  // это блок с использованием стейта промежуточного каунта -----------------------
   const card = useSelector((state) => state.cards.activeWords);
   const c = useSelector((state) => state.cards.card);
-
   const test = useSelector((state) => state);
-
   let [count, setCount] = useState(1);
   let [ourCard, setOurCard] = useState(card[0]);
   const dispatch = useDispatch();
@@ -22,12 +23,10 @@ function Card() {
   console.log(c);
   console.log(card);
   console.log(localStorage.getItem("lingvaCard"));
-
   if (c === undefined) {
     dispatch(takeCard());
-    // setOurCard
   }
-  // c ? setOurCard(c) : card[count];
+  // блок промежуточного каунта --------------------------------------------------------
   function showCard() {
     let lengthArr = card.length;
     dispatch(study(ourCard.id));
@@ -54,7 +53,7 @@ function Card() {
       dispatch(nextCard());
       dispatch(changeNow());
     }
-    console.log(c);
+    // console.log(c);
   }
 
   function miss() {
