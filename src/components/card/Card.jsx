@@ -27,6 +27,7 @@ function Card() {
     dispatch(takeCard());
   }
   // блок промежуточного каунта --------------------------------------------------------
+  // check all function
   function showCard() {
     let lengthArr = card.length;
     dispatch(study(ourCard.id));
