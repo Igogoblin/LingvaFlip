@@ -22,6 +22,7 @@ function Card() {
   // console.log(card);
   console.log(c);
   console.log(card);
+  console.log(ourCard);
   console.log(localStorage.getItem("lingvaCard"));
   if (c === undefined) {
     dispatch(takeCard());
